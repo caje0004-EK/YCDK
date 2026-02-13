@@ -1,17 +1,75 @@
 ---
+import "../styles/general.css";
+import Header from "../components/Header.astro";
+import Card from "../components/Card.astro";
+import Graphics from "../components/Graphics.astro";
+import BigCard from "../components/BigCard.astro";
+import BigCardReversed from "../components/BigCardReversed.astro";
+import Footer from "../components/Footer.astro";
 
+import cardone from "../assets/CardOne.png";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="../src/assets/logo.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Young Creatives Denmark</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section id="upcoming-events">
+        <article>
+          <h2>Kommende events</h2>
+          <p>Der sker noget andet, når vi mødes i virkeligheden. Samtalerne bliver skarpere, og relationerne bliver stærkere. Vores events handler ikke om at netværke mest muligt, men om at møde de rigtige mennesker, ansigt til ansigt.</p>
+        </article>
+        <article class="cards-flex">
+          <Card placeholder={cardone} title="Lorem ipsum dolor sit amet." text="lorem" />
+          <Card placeholder={cardone} title="Lorem ipsum dolor sit amet." text="ipsum" />
+          <Card placeholder={cardone} title="Lorem ipsum dolor sit amet." text="lorem ipsum" />
+        </article>
+      </section>
+      <section>
+        <Graphics title="Tilmeld dig næste Ansigt til Ansigt" buttonText="TILMELD" />
+      </section>
+      <section id="info">
+        <article>
+          <h2>Lorem</h2>
+          <p>Følg med før, under og efter vores events. Her deler vi gode øjeblikke fra fællesskabet samt praktisk info, så du altid ved, hvad der sker, og hvad du kan forvente.</p>
+        </article>
+        <article>
+          <BigCard placeholder={cardone} title="FAQ Reel" text="Har du spørgsmål inden du dukker op? Det har de fleste. Du kan finde svar på det meste gennem vores Sociale Medier, eller gennem linket herunder. " buttonText="LOREM IPSUM" />
+          <BigCardReversed
+            placeholder={cardone}
+            title="Netværksbogen"
+            text="Netværksbogen er din makker til Ansigt til Ansigt. Den er fyldt med hjælpespørgsmål og små kreative opgaver, som kan hjælpe dig, der har svært ved at åbne op for de kreative opgaver."
+            buttonText="LOREM IPSUM"
+          />
+        </article>
+      </section>
+    </main>
+    <Footer />
+  </body>
 </html>
+
+<style is:global>
+  #upcoming-events,
+  #info {
+    margin: 2rem;
+    margin-top: 6rem;
+  }
+
+  @media (width>=800px) {
+    #upcoming-events article:first-child,
+    #info article:first-child {
+      margin: 2rem;
+      max-width: 67ch;
+    }
+    .cards-flex {
+      display: flex;
+    }
+  }
+</style>

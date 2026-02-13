@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.svg";
+import ButtonLightpink from "./buttons/ButtonLightpink.astro";
+const { buttonText } = Astro.props;
+---
+
+<nav>
+  <ul>
+    <li><Image src={logo} alt="Logo" /></li>
+    <li><ButtonLightpink buttonText="LOREM IPSUM" /></li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    padding: 2rem;
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  li {
+    list-style-type: none;
+  }
+</style>
