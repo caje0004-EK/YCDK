@@ -2,20 +2,36 @@
 import Navigation from "../components/Navigation.astro";
 import { Image } from "astro:assets";
 import logoBig from "../assets/logoBig.svg";
+import heroimg from "../assets/HeroImage.png";
 ---
 
 <header>
-  <Navigation />
-  <div class="hero">
-    <Image src={logoBig} alt="Logo" />
-    <p>Young Creatives Denmark skaber rum for sparring, relationer og nye perspektiver gennem events og netværking.</p>
+  <div class="hero-img">
+    <Image src={heroimg} alt="Hero image" />
+  </div>
+  <div class="hero-content">
+    <Navigation />
+    <div class="hero">
+      <Image src={logoBig} alt="Logo" />
+      <p>Young Creatives Denmark skaber rum for sparring, relationer og nye perspektiver gennem events og netværking.</p>
+    </div>
   </div>
 </header>
 
 <style>
   header {
+    display: grid;
     background-color: rgb(0, 140, 216);
   }
+
+  .hero-content {
+    grid-area: 1/1;
+  }
+
+  .hero-img {
+    grid-area: 1/1;
+  }
+
   .hero {
     display: flex;
     align-items: center;
