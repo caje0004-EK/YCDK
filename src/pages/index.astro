@@ -8,6 +8,11 @@ import BigCardReversed from "../components/BigCardReversed.astro";
 import Footer from "../components/Footer.astro";
 
 import cardone from "../assets/CardOne.png";
+import event1 from "../assets/Event1.png";
+import event2 from "../assets/Event2.png";
+import event3 from "../assets/Event3.png";
+import netværksbog from "../assets/Netværksbogen.png";
+import faq from "../assets/FAQVideo.mp4";
 ---
 
 <html lang="en">
@@ -27,9 +32,24 @@ import cardone from "../assets/CardOne.png";
           <p>Der sker noget andet, når vi mødes i virkeligheden. Samtalerne bliver skarpere, og relationerne bliver stærkere. Vores events handler ikke om at netværke mest muligt, men om at møde de rigtige mennesker, ansigt til ansigt.</p>
         </article>
         <article class="cards-flex">
-          <Card placeholder={cardone} title="Lorem ipsum dolor sit amet." text="lorem" />
-          <Card placeholder={cardone} title="Lorem ipsum dolor sit amet." text="ipsum" />
-          <Card placeholder={cardone} title="Lorem ipsum dolor sit amet." text="lorem ipsum" />
+          <Card
+            placeholder={event1}
+            title="Ansigt til ansigt med Robert / Boisen "
+            text="Eventet afholdes hos Robert / Boisen på Pilestræde 10, 3, 1112 København d. 2. oktober 2024 kl. 17:30 til 21"
+            tekst="Robert / Boisen står bl.a. bag kampagnefilmene for Rådet for sikker trafik."
+          />
+          <Card
+            placeholder={event2}
+            title="Ansigt til ansigt med Uncle Grey"
+            text="Eventet afholdes hos Uncle Grey på Rosenborggade 15, 3, 1130 København d. 7 februar 2025 kl. 17 til 21"
+            tekst="Uncle Grey står bag reklamer for bl.a. Burger King, Waoo og Samsøe Samsøe."
+          />
+          <Card
+            placeholder={event3}
+            title="Ansigt til ansigt med Nord DDB"
+            text="Eventet afholdes hos Nord DDB på Møntergade 1, 1116 København d. 6. november 2025 kl. 17:30 til 21."
+            tekst="Nord DDB står bag kampagner for bl.a. McDonald's, HBO, KiMs og Kræftens Bekæmpelse."
+          />
         </article>
       </section>
       <section>
@@ -37,16 +57,16 @@ import cardone from "../assets/CardOne.png";
       </section>
       <section id="info">
         <article>
-          <h2>Lorem</h2>
+          <h2>Godt at vide inden Ansigt til Ansigt</h2>
           <p>Følg med før, under og efter vores events. Her deler vi gode øjeblikke fra fællesskabet samt praktisk info, så du altid ved, hvad der sker, og hvad du kan forvente.</p>
         </article>
         <article>
-          <BigCard placeholder={cardone} title="FAQ Reel" text="Har du spørgsmål inden du dukker op? Det har de fleste. Du kan finde svar på det meste gennem vores Sociale Medier, eller gennem linket herunder. " buttonText="LOREM IPSUM" />
+          <BigCard faq={faq} title="FAQ Video" text="Har du spørgsmål inden du dukker op? Det har de fleste. Du kan finde svar på det meste gennem vores Sociale Medier, eller gennem linket herunder. " buttonText="SE VORES FAQ" />
           <BigCardReversed
-            placeholder={cardone}
+            placeholder={netværksbog}
             title="Netværksbogen"
             text="Netværksbogen er din makker til Ansigt til Ansigt. Den er fyldt med hjælpespørgsmål og små kreative opgaver, som kan hjælpe dig, der har svært ved at åbne op for de kreative opgaver."
-            buttonText="LOREM IPSUM"
+            buttonText="DOWNLOAD BOGEN"
           />
         </article>
       </section>

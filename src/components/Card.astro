@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-const { placeholder, text, title } = Astro.props;
+const { placeholder, text, title, tekst } = Astro.props;
 ---
 
 <section class="feature">
@@ -8,6 +8,7 @@ const { placeholder, text, title } = Astro.props;
   <div class="content">
     <h4>{title}</h4>
     <p>{text}</p>
+    <p>{tekst}</p>
   </div>
 </section>
 
