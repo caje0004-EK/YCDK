@@ -1,11 +1,12 @@
 ---
-import { Image } from "astro:assets";
 import ButtonBlue from "./buttons/ButtonBlue.astro";
-const { placeholder, buttonText, text, title } = Astro.props;
+const { faq, buttonText, text, title } = Astro.props;
 ---
 
 <section class="feature">
-  <Image src={placeholder} alt="Beskrivende tekst" class="placeholder" />
+  <div class="video-wrapper">
+    <video src={faq} autoplay muted loop playsinline></video>
+  </div>
   <div class="content">
     <h3>{title}</h3>
     <p>{text}</p>
@@ -24,6 +25,21 @@ const { placeholder, buttonText, text, title } = Astro.props;
 
   .feature {
     margin: 4rem 1rem;
+  }
+
+  .video-wrapper {
+    overflow: hidden;
+  }
+
+  .video-wrapper :global(video) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .video-wrapper video {
+    width: 100%;
+    height: 100%;
   }
 
   @media (width>=800px) {
